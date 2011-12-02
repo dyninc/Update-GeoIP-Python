@@ -66,7 +66,7 @@ response = dynect.execute('/Geo/' + name, 'GET')
 
 #if we ran into an error, lets bail out and report the messages that were returned
 if response['status'] != 'success':
-	sys.exit("Failed to get GeoIp service: " + "".join(response['msgs']))
+	sys.exit("Failed to get GeoIp service: " + response['msgs'][0]['INFO'])
 
 get_reply = response['data']
 
